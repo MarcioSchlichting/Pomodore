@@ -1,13 +1,11 @@
 import React from 'react';
-import './App.css';
-import Button from './shared/components/Button';
+import { ExperienceBar } from './shared/components/ExperienceBar';
+import './styles/global.css'
 
 export default function App() {
   return (
-    <div className="App">
-      <Button color="green">
-        Test
-        </Button>
+    <div className="container">
+      <ExperienceBar/>
     </div>
   );
 }
