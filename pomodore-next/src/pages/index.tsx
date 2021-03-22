@@ -2,34 +2,52 @@ import React from "react";
 import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
+import { GetServerSideProps } from 'next';
+
 import Profile from "../components/Profile";
 import Head from 'next/head';
 
 import styles from '../styles/pages/Home.module.css';
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
+import { ChallengesProvider } from "../contexts/ChallengesContext";
 
-export default function Home() {
+export default function Home(props) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Inicio | Pomodore</title>
-      </Head>
+    <ChallengesProvider level={props.level} currentExperience={props.currentExperience} challengesCompleted={props.challengesCompleted}>
+      <div className={styles.container}>
+        <Head>
+          <title>Inicio | Pomodore</title>
+        </Head>
 
-      <ExperienceBar/>
+        <ExperienceBar/>
 
-      <CountdownProvider>
-        <section>
-          <div>
-            <Profile/>
-            <CompletedChallenges/>
-            <Countdown/>
-          </div>
-          <div>
-            <ChallengeBox/>
-          </div>
-        </section>
-      </CountdownProvider>
-    </div>
+        <CountdownProvider>
+          <section>
+            <div>
+              <Profile/>
+              <CompletedChallenges/>
+              <Countdown/>
+            </div>
+            <div>
+              <ChallengeBox/>
+            </div>
+          </section>
+        </CountdownProvider>
+      </div>
+
+    </ChallengesProvider>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const { level, currentExperience, challengesCompleted } = req.cookies;
+
+  return {
+    props: {
+      level: Number(level),
+      currentExperience: Number(currentExperience),
+      challengesCompleted: Number(challengesCompleted),
+    }
+  }
+};
