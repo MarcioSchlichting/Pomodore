@@ -1,21 +1,22 @@
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar">How to run it</a>&nbsp;&nbsp;&nbsp;
 </p>
 
-## ✨ Tecnologias
+## ✨ Tecnologies
 
 - [React](https://reactjs.org)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Docker](https://www.docker.com/)
 
-## 💻 Projeto
+## 💻 Project
 
-É um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
+It is an app that combines the Pomodoro technique with physical exercise for people who spend a lot of time in front of the computer.
 
-## 🚀 Como executar
+## 🚀 How to run it
 
-- Clone o repositório
-- Rode o Dockerfile dentro do projeto
+- Clone the repository
+- Run the dockerfile inside the project
+- Open the browser in http://localhost:3000
